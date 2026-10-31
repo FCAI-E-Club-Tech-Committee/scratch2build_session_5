@@ -12,11 +12,11 @@ const students = [
 // Objective: Get the students who passed and print their names.
 // ==================================================
 
-const passedStudents = students.forEach(student => {
+const passedStudents = students.filter(student => {
     return student.score >= 50;
 });
 
-const studentNames = students.forEach(student => {
+const studentNames = students.map(student => {
     return student.name;
 });
 
@@ -32,15 +32,13 @@ console.log("Student names:", studentNames);
 // Its syntax errors will prevent the entire file from running.
 // ==================================================
 
-/*
-const calculateDiscount = (price, discount) =>
+const calculateDiscount = (price, discount) => {
     const finalPrice = price - (price * discount / 100);
 
     return finalPrice;
 };
 
 console.log("Final price:", calculateDiscount(200, 20));
-*/
 
 
 // ==================================================
@@ -50,9 +48,10 @@ console.log("Final price:", calculateDiscount(200, 20));
 // ==================================================
 
 function calculateAverage() {
+    let totalScore = 0;
+
     for (let i = 0; i < students.length; i++) {
-        let totalScore = 0;
-        totalScore + students[i].score;
+        totalScore += students[i].score;
     }
 
     console.log("Average score:", totalScore / students.length);
@@ -70,13 +69,13 @@ calculateAverage();
 function findHighestScore(students) {
     let highest = 0;
 
-    for (let i = 0; i <= students.length; i++) {
+    for (let i = 0; i < students.length; i++) {
         if (students[i].score > highest) {
             highest = students[i].score;
         }
-
-        return highest;
     }
+
+    return highest;
 }
 
 console.log("Highest score:", findHighestScore(students));
