@@ -1,11 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week 3 - scratch2build_session_5</title> 
-  </head>
-  <body>
-    <!-- Link your JS files here -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 3 - scratch2build_session_5</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Student results</h1>
+
+    <div class="stats">
+      <div class="stat"><b id="avg"></b><span>Average score</span></div>
+      <div class="stat"><b id="high"></b><span>Highest score</span></div>
+      <div class="stat"><b id="passCount"></b><span>Students passed</span></div>
+    </div>
+
+    <section>
+      <h2>All students</h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Score</th><th>Result</th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Passed students</h2>
+      <ul class="chips" id="passed"></ul>
+    </section>
+
+    <section>
+      <h2>Student names</h2>
+      <ul class="chips" id="names"></ul>
+    </section>
+  </main>
+
+  <script src="clean.js"></script>
+</body>
 </html>
