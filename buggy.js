@@ -8,17 +8,11 @@ const students = [
 
 // ==================================================
 // BUG BLOCK 1: Array Methods
-// Bugs: 2
 // Objective: Get the students who passed and print their names.
 // ==================================================
 
-const passedStudents = students.forEach(student => {
-    return student.score >= 50;
-});
-
-const studentNames = students.forEach(student => {
-    return student.name;
-});
+const passedStudents = students.filter(student => student.score >= 50);
+const studentNames = students.map(student => student.name);
 
 console.log("Passed students:", passedStudents);
 console.log("Student names:", studentNames);
@@ -26,33 +20,26 @@ console.log("Student names:", studentNames);
 
 // ==================================================
 // BUG BLOCK 2: Syntax Errors
-// Bugs: 2 syntax errors
 // Objective: Calculate the final price after a discount.
-// IMPORTANT: Uncomment this block only when solving it.
-// Its syntax errors will prevent the entire file from running.
 // ==================================================
 
-/*
-const calculateDiscount = (price, discount) =>
+const calculateDiscount = (price, discount) => {
     const finalPrice = price - (price * discount / 100);
-
     return finalPrice;
 };
 
 console.log("Final price:", calculateDiscount(200, 20));
-*/
 
 
 // ==================================================
 // BUG BLOCK 3: Loops and Variable Scope
-// Bugs: 2
 // Objective: Calculate the average score of all students.
 // ==================================================
 
 function calculateAverage() {
+    let totalScore = 0;
     for (let i = 0; i < students.length; i++) {
-        let totalScore = 0;
-        totalScore + students[i].score;
+        totalScore += students[i].score;
     }
 
     console.log("Average score:", totalScore / students.length);
@@ -63,20 +50,19 @@ calculateAverage();
 
 // ==================================================
 // BUG BLOCK 4: Loops and Functions
-// Bugs: 2
 // Objective: Find and return the highest student score.
 // ==================================================
 
 function findHighestScore(students) {
     let highest = 0;
 
-    for (let i = 0; i <= students.length; i++) {
+    for (let i = 0; i < students.length; i++) {
         if (students[i].score > highest) {
             highest = students[i].score;
         }
-
-        return highest;
     }
+
+    return highest;
 }
 
-console.log("Highest score:", findHighestScore(students));
+console.log("Highest score:", findHighestScore(students));students));
