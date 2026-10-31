@@ -1,82 +1,73 @@
 const students = [
-    { name: "Ahmed", score: 85 },
-    { name: "Sara", score: 42 },
-    { name: "Omar", score: 67 },
-    { name: "Mariam", score: 30 },
-    { name: "Ali", score: 50 }
+{ name: "Ahmed", score: 85 },
+{ name: "Sara", score: 42 },
+{ name: "Omar", score: 67 },
+{ name: "Mariam", score: 30 },
+{ name: "Ali", score: 50 }
 ];
 
 // ==================================================
-// BUG BLOCK 1: Array Methods
-// Bugs: 2
-// Objective: Get the students who passed and print their names.
+// TASK 1: Array Methods
 // ==================================================
 
-const passedStudents = students.forEach(student => {
-    return student.score >= 50;
+// Get students who passed
+const passedStudents = students.filter(student => {
+return student.score >= 50;
 });
 
-const studentNames = students.forEach(student => {
-    return student.name;
+// Get students names
+const studentNames = students.map(student => {
+return student.name;
 });
 
 console.log("Passed students:", passedStudents);
 console.log("Student names:", studentNames);
 
-
 // ==================================================
-// BUG BLOCK 2: Syntax Errors
-// Bugs: 2 syntax errors
-// Objective: Calculate the final price after a discount.
-// IMPORTANT: Uncomment this block only when solving it.
-// Its syntax errors will prevent the entire file from running.
+// TASK 2: Syntax Errors
 // ==================================================
 
-/*
-const calculateDiscount = (price, discount) =>
-    const finalPrice = price - (price * discount / 100);
+const calculateDiscount = (price, discount) => {
+const finalPrice = price - (price * discount / 100);
 
-    return finalPrice;
+return finalPrice;
+
 };
 
 console.log("Final price:", calculateDiscount(200, 20));
-*/
-
 
 // ==================================================
-// BUG BLOCK 3: Loops and Variable Scope
-// Bugs: 2
-// Objective: Calculate the average score of all students.
+// TASK 3: Loops and Variable Scope
 // ==================================================
 
 function calculateAverage() {
-    for (let i = 0; i < students.length; i++) {
-        let totalScore = 0;
-        totalScore + students[i].score;
-    }
+let totalScore = 0;
 
-    console.log("Average score:", totalScore / students.length);
+for (let i = 0; i < students.length; i++) {
+    totalScore += students[i].score;
+}
+
+console.log("Average score:", totalScore / students.length);
+
 }
 
 calculateAverage();
 
-
 // ==================================================
-// BUG BLOCK 4: Loops and Functions
-// Bugs: 2
-// Objective: Find and return the highest student score.
+// TASK 4: Loops and Functions
 // ==================================================
 
 function findHighestScore(students) {
-    let highest = 0;
+let highest = 0;
 
-    for (let i = 0; i <= students.length; i++) {
-        if (students[i].score > highest) {
-            highest = students[i].score;
-        }
-
-        return highest;
+for (let i = 0; i < students.length; i++) {
+    if (students[i].score > highest) {
+        highest = students[i].score;
     }
+}
+
+return highest;
+
 }
 
 console.log("Highest score:", findHighestScore(students));
